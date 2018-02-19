@@ -22,4 +22,8 @@ class Task
     tasks
   end
 
+  def save
+    DB.exec("INSERT INTO tasks (description) VALUES ('#{@description}');")
+  end
+  
 end
