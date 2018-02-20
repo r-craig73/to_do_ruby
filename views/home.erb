@@ -1,6 +1,19 @@
 <h1>Welcome to the To Do App</h1>
 
 <div class="container">
+
+  <h1>Your Current Lists</h1>
+
+  <% if @lists.any?() %>
+    <h3>Here are your lists:</h3>
+    <ul>
+      <% @lists.each() do |list| %>
+        <li><a href="/<%= list.id()%>"><%= list.name() %></a> </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no lists yet!</p>
+  <% end %>
   <!-- <a href="/lists">View All Lists</a> -->
   <!-- <a href="/lists/new">Add New List</a> -->
   <form action="/" method="post">
