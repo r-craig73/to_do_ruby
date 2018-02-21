@@ -1,7 +1,4 @@
-#!/usr/bin/ruby
-
 class Task
-
   attr_reader(:description, :list_id, :due_date)
 
   def initialize(attributes)

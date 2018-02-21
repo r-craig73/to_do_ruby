@@ -19,10 +19,12 @@ describe(List) do
   end
 
   describe("#id") do
-    it("sets its ID when you save it") do
+    it("sets an ID when you save it") do
       list = List.new({:name => "Epicodus stuff", :id => nil})
       list.save()
-      expect(list.id()).to(be_an_instance_of(Integer))
+      expect(list.id()).to(be_an_instance_of(Fixnum))
+      # use Fixnum class for Ruby before 2.4 (Ron's MB Pro is using 2.2.2)
+      # use Integer class for Ruby 2.4 or later
     end
   end
 

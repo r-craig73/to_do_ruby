@@ -11,12 +11,12 @@ describe(Task) do
   end
 
   describe("#save") do
-    it("adds a task to the array") do
-      test_task = Task.new({:description => "learn SQL", :list_id => 1, :due_date => "2018-03-27 00:00:00"})
-      test_task.save()
-      expect(Task.all()).to(eq([test_task]))
+      it("adds a task to the array of saved tasks") do
+        test_task = Task.new({:description => "learn SQL", :list_id => 1, :due_date => "2018-03-27 00:00:00"})
+        test_task.save()
+        expect(Task.all()).to(eq([test_task]))
+      end
     end
-  end
 
   describe("#description") do
     it("lets you read the decription out") do
@@ -40,11 +40,4 @@ describe(Task) do
     end
   end
 
-  describe("#save") do
-    it("adds a task to the array of saved tasks") do
-      test_task = Task.new({:description => "learn SQL", :list_id => 1, :due_date => "2018-03-27 00:00:00"})
-      test_task.save()
-      expect(Task.all()).to(eq([test_task]))
-    end
-  end
 end
